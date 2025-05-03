@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 import Header from "@/components/Header";
 import ServiceCard from "@/components/ServiceCard";
+import PriceCard from "@/components/PriceCard";
+import QuickOrderForm from "@/components/QuickOrderForm";
 
 const Index = () => {
   return (
@@ -95,8 +97,62 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Pricing Section */}
+      <section id="price" className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Тарифы на услуги</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Прозрачные цены без скрытых платежей и дополнительных наценок
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <PriceCard 
+              title="Стандарт"
+              price="2 500"
+              icon="Car"
+              features={[
+                "Эвакуация легковых автомобилей",
+                "Время прибытия до 30 минут",
+                "Перевозка в пределах города",
+                "Погрузка/разгрузка автомобиля"
+              ]}
+            />
+            
+            <PriceCard 
+              title="Комфорт"
+              price="3 500"
+              icon="Truck"
+              popular={true}
+              features={[
+                "Эвакуация внедорожников и кроссоверов",
+                "Приоритетный выезд (до 20 минут)",
+                "Перевозка в пределах города и области",
+                "Техническая консультация специалиста",
+                "Помощь при погрузке багажа"
+              ]}
+            />
+            
+            <PriceCard 
+              title="Премиум"
+              price="5 000"
+              icon="Wrench"
+              features={[
+                "Эвакуация любого транспорта",
+                "Срочный выезд (до 15 минут)",
+                "Междугородняя эвакуация",
+                "Комплексная техпомощь на дороге",
+                "Хранение автомобиля до 3 дней",
+                "Помощь с оформлением документов"
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+      
       {/* Advantages Section */}
-      <section id="advantages" className="py-16">
+      <section id="advantages" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Почему выбирают нас</h2>
@@ -176,6 +232,56 @@ const Index = () => {
                 <h3 className="text-xl font-semibold mb-2">Гарантия сохранности</h3>
                 <p className="text-muted-foreground">Гарантируем полную сохранность вашего автомобиля при погрузке и транспортировке.</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Order Form Section */}
+      <section id="order" className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold mb-4">Нужна эвакуация автомобиля?</h2>
+              <p className="text-lg mb-6">
+                Заполните форму, и мы оперативно приедем на помощь в любое время суток
+              </p>
+              
+              <div className="space-y-6">
+                <div className="flex">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                    <Icon name="CheckCircle" className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-1">Быстрое реагирование</h3>
+                    <p className="text-muted-foreground">После заполнения формы наш оператор свяжется с вами в течение 5 минут</p>
+                  </div>
+                </div>
+                
+                <div className="flex">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                    <Icon name="CheckCircle" className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-1">Точная цена</h3>
+                    <p className="text-muted-foreground">Узнайте стоимость эвакуации до заказа, без скрытых наценок и доплат</p>
+                  </div>
+                </div>
+                
+                <div className="flex">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                    <Icon name="CheckCircle" className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-1">Удобная оплата</h3>
+                    <p className="text-muted-foreground">Наличный и безналичный расчет, оплата картой, по QR-коду</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <QuickOrderForm />
             </div>
           </div>
         </div>
