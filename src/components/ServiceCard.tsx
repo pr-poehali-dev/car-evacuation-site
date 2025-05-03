@@ -1,25 +1,24 @@
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
-import { LucideIcon } from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 interface ServiceCardProps {
+  icon: string;
   title: string;
   description: string;
-  icon: string;
 }
 
-const ServiceCard = ({ title, description, icon }: ServiceCardProps) => {
+const ServiceCard = ({ icon, title, description }: ServiceCardProps) => {
   return (
-    <Card className="service-card h-full">
-      <CardHeader>
+    <Card className="service-card">
+      <CardHeader className="pb-2">
         <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
           <Icon name={icon} className="h-6 w-6 text-primary" />
         </div>
-        <CardTitle className="text-xl">{title}</CardTitle>
+        <h3 className="text-xl font-semibold">{title}</h3>
       </CardHeader>
       <CardContent>
-        <CardDescription className="text-muted-foreground">{description}</CardDescription>
+        <p className="text-muted-foreground">{description}</p>
       </CardContent>
     </Card>
   );
