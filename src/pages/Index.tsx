@@ -3,8 +3,6 @@ import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 import Header from "@/components/Header";
 import ServiceCard from "@/components/ServiceCard";
-import PriceCard from "@/components/PriceCard";
-import QuickOrderForm from "@/components/QuickOrderForm";
 
 const Index = () => {
   return (
@@ -97,62 +95,8 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Pricing Section */}
-      <section id="price" className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Тарифы на услуги</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Прозрачные цены без скрытых платежей и дополнительных наценок
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <PriceCard 
-              title="Стандарт"
-              price="2 500"
-              icon="Car"
-              features={[
-                "Эвакуация легковых автомобилей",
-                "Время прибытия до 30 минут",
-                "Перевозка в пределах города",
-                "Погрузка/разгрузка автомобиля"
-              ]}
-            />
-            
-            <PriceCard 
-              title="Комфорт"
-              price="3 500"
-              icon="Truck"
-              popular={true}
-              features={[
-                "Эвакуация внедорожников и кроссоверов",
-                "Приоритетный выезд (до 20 минут)",
-                "Перевозка в пределах города и области",
-                "Техническая консультация специалиста",
-                "Помощь при погрузке багажа"
-              ]}
-            />
-            
-            <PriceCard 
-              title="Премиум"
-              price="5 000"
-              icon="Wrench"
-              features={[
-                "Эвакуация любого транспорта",
-                "Срочный выезд (до 15 минут)",
-                "Междугородняя эвакуация",
-                "Комплексная техпомощь на дороге",
-                "Хранение автомобиля до 3 дней",
-                "Помощь с оформлением документов"
-              ]}
-            />
-          </div>
-        </div>
-      </section>
-      
       {/* Advantages Section */}
-      <section id="advantages" className="py-16 bg-gray-50">
+      <section id="advantages" className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Почему выбирают нас</h2>
@@ -237,51 +181,42 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Order Form Section */}
-      <section id="order" className="py-16">
+      {/* Contact Section */}
+      <section id="contacts" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-4">Нужна эвакуация автомобиля?</h2>
-              <p className="text-lg mb-6">
-                Заполните форму, и мы оперативно приедем на помощь в любое время суток
-              </p>
-              
-              <div className="space-y-6">
-                <div className="flex">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
-                    <Icon name="CheckCircle" className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-1">Быстрое реагирование</h3>
-                    <p className="text-muted-foreground">После заполнения формы наш оператор свяжется с вами в течение 5 минут</p>
-                  </div>
-                </div>
-                
-                <div className="flex">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
-                    <Icon name="CheckCircle" className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-1">Точная цена</h3>
-                    <p className="text-muted-foreground">Узнайте стоимость эвакуации до заказа, без скрытых наценок и доплат</p>
-                  </div>
-                </div>
-                
-                <div className="flex">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
-                    <Icon name="CheckCircle" className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-1">Удобная оплата</h3>
-                    <p className="text-muted-foreground">Наличный и безналичный расчет, оплата картой, по QR-коду</p>
-                  </div>
-                </div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Свяжитесь с нами</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Мы готовы ответить на ваши вопросы и прийти на помощь в любой ситуации
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Icon name="Phone" className="h-8 w-8 text-primary" />
               </div>
+              <h3 className="text-xl font-semibold mb-2">Телефон</h3>
+              <p className="text-muted-foreground mb-2">Работаем круглосуточно</p>
+              <p className="font-semibold text-lg">+7 (999) 123-45-67</p>
             </div>
             
-            <div>
-              <QuickOrderForm />
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Icon name="Mail" className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Email</h3>
+              <p className="text-muted-foreground mb-2">Ответим в течение часа</p>
+              <p className="font-semibold text-lg">info@autoevac.ru</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Icon name="MapPin" className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Адрес</h3>
+              <p className="text-muted-foreground mb-2">Центральный офис</p>
+              <p className="font-semibold text-lg">г. Москва, ул. Примерная, 123</p>
             </div>
           </div>
         </div>
